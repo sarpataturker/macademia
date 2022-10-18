@@ -355,6 +355,7 @@ void SpriteProgressWithSpriteFrame::onEnter()
     auto s = Director::getInstance()->getWinSize();
 
     auto to = Sequence::createWithTwoActions(ProgressTo::create(6, 100), ProgressTo::create(0, 0));
+    auto to2 = Sequence::create(ProgressTo::create(2, 100), ProgressTo::create(0, 0),ProgressTo::create(1, 100), ProgressTo::create(0, 0),NULL);
 
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("zwoptex/grossini.plist");
 
@@ -366,7 +367,7 @@ void SpriteProgressWithSpriteFrame::onEnter()
     left->setBarChangeRate(Vec2(1.0f, 0.0f));
     addChild(left);
     left->setPosition(100, s.height/2);
-    left->runAction(RepeatForever::create(to->clone()));
+    left->runAction(RepeatForever::create(to2->clone()));
 
     auto middle = ProgressTimer::create(Sprite::createWithSpriteFrameName("grossini_dance_02.png"));
     middle->setType(ProgressTimer::Type::BAR);
