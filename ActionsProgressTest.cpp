@@ -378,7 +378,7 @@ void SpriteProgressWithSpriteFrame::onEnter()
     middle->setPosition(s.width/2, s.height/2);
     middle->runAction(RepeatForever::create(to->clone()));
 
-    auto right = ProgressTimer::create(Sprite::createWithSpriteFrameName("grossinis_sister2.png"));
+    auto right = ProgressTimer::create(Sprite::create(s_pathSister2));
     right->setType(ProgressTimer::Type::RADIAL);
     //    Setup for a bar starting from the bottom since the midpoint is 0 for the y
     right->setMidpoint(Vec2(0.5f, 0.5f));
