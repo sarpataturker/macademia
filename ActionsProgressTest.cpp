@@ -356,6 +356,7 @@ void SpriteProgressWithSpriteFrame::onEnter()
 
     auto to = Sequence::createWithTwoActions(ProgressTo::create(6, 100), ProgressTo::create(0, 0));
     auto to2 = Sequence::create(ProgressTo::create(2, 100), ProgressTo::create(0, 0),ProgressTo::create(1, 100), ProgressTo::create(0, 0),NULL);
+    auto to1 = Sequence::create(ProgressTo::create(1, 100), ProgressTo::create(0, 0),ProgressTo::create(2, 100), ProgressTo::create(0, 0),ProgressTo::create(3, 100), ProgressTo::create(0, 0),ProgressTo::create(4, 100), ProgressTo::create(0, 0),ProgressTo::create(5, 100), ProgressTo::create(0, 0),ProgressTo::create(6, 100), ProgressTo::create(0, 0),ProgressTo::create(7, 100), ProgressTo::create(0, 0),ProgressTo::create(8, 100), ProgressTo::create(0, 0),ProgressTo::create(9, 100), ProgressTo::create(0, 0),NULL);
 
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("zwoptex/grossini.plist");
 
@@ -387,7 +388,7 @@ void SpriteProgressWithSpriteFrame::onEnter()
     right->setBarChangeRate(Vec2(0, 1));
     addChild(right);
     right->setPosition(s.width-100, s.height/2);
-    right->runAction(RepeatForever::create(to->clone()));
+    right->runAction(RepeatForever::create(to1->clone()));
 }
 
 std::string SpriteProgressWithSpriteFrame::subtitle() const
